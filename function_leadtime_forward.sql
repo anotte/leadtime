@@ -4,7 +4,7 @@ USE `database`$$
 
 DROP FUNCTION IF EXISTS `function_leadtime_forward`$$
 
-CREATE DEFINER=`root`@`localhost` FUNCTION `function_leadtime_forward`(DataRef DATETIME, TaskLeadtime INT) RETURNS VARCHAR(211) CHARSET latin1
+CREATE DEFINER=`root`@`localhost` FUNCTION `function_leadtime_forward`(DataRef DATETIME, TaskTime INT) RETURNS VARCHAR(211) CHARSET latin1
     DETERMINISTIC
 BEGIN
   DECLARE exp_ini TIME DEFAULT 0;
@@ -16,7 +16,7 @@ BEGIN
   DECLARE lt_real INT DEFAULT 0;
   DECLARE wl_day INT DEFAULT 0;
   DECLARE step VARCHAR(255) DEFAULT '';
-  SET lt_remain = TaskLeadtime;
+  SET lt_remain = TaskTime;
 	lead_loop : LOOP
 		/*IF (lt_remain <= 0) THEN*/
 		IF (lt_remain <= 0) THEN
