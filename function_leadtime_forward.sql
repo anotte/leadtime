@@ -4,7 +4,7 @@ USE `database`$$
 
 DROP FUNCTION IF EXISTS `function_leadtime_forward`$$
 
-CREATE DEFINER=`root`@`localhost` FUNCTION `FC_leadtime_real_add`(DataRef DATETIME, TaskLeadtime INT) RETURNS VARCHAR(211) CHARSET latin1
+CREATE DEFINER=`root`@`localhost` FUNCTION `function_leadtime_forward`(DataRef DATETIME, TaskLeadtime INT) RETURNS VARCHAR(211) CHARSET latin1
     DETERMINISTIC
 BEGIN
   DECLARE exp_ini TIME DEFAULT 0;
